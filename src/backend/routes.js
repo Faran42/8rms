@@ -3,23 +3,23 @@ import { Router } from 'express'
 const router = Router();
 
 router.get('/', (req, res) => {
-    res.render('pages/home/home')
+    res.render('pages/home')
 });
 
 router.get('/login', (req, res) => {
-    res.render('pages/login/login')
+    res.render('pages/login')
 });
 
 router.get('/cadastro', (req, res) => {
-    res.render('pages/cadastro/cadastro')
+    res.render('pages/cadastro')
 });
 
 router.get('/listagem', (req, res) => {
-    res.render('pages/listagem/listagem')
+    res.render('pages/listagem')
 });
 
 router.get('/sobre', (req, res) => {
-    res.render('pages/sobre/sobre')
+    res.render('pages/sobre')
 });
 
 // router.post('/cadastrar/funcionario', (req, res) => {

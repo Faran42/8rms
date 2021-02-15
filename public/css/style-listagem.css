@@ -1,0 +1,89 @@
+/* Global ============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header ============= */
+header {
+    background: #1d1d4f;
+    padding: 2rem 0 2rem;
+    position: relative;
+}
+
+#inicio, #sobre, #contato {
+    color: #5b897f;
+}
+
+#inicio {
+    text-align: right;
+}
+
+#contato {
+    text-align: left;
+}
+
+header table {
+    min-width: 70%;
+}
+
+#logo {
+    color: #5b897f;
+    text-align: left;
+    padding-left: 2rem;
+}
+
+/* Main =============== */
+
+main {
+    background: #dbe5aa;
+}
+
+/* Footer ============= */
+footer {
+    color: #5b897f;
+    text-align: center;
+    background: #1d1d4f;
+    padding: 10px 0 10px;
+    position: relative;
+}
+
+/* Buttons ============= */
+
+/* Listagem ============= */
+.container {
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+
+.box {
+    width: 650px;
+    height: 300px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+
+}
+
+#listagem {
+    width: 100%;
+}
+
+#dados {
+    background: rgb(94, 95, 92);
+    color: #fff;
+}

@@ -14,6 +14,10 @@ app.engine('hbs', exphbs({ extname: '.hbs', defaultLayout: 'main', layoutsDir: _
 app.use(express.static(path.join(__dirname, '../../public')));
 app.set('view engine', 'hbs');
 
+app.use(express.urlencoded({
+    extended: true
+  }))
+
 app.use(router);
 
 export default app;

@@ -1,9 +1,13 @@
 import { Router } from 'express'
 
+import sessionsController from './controllers/sessionsController'
+
 const router = Router();
 
 router.get('/', (req, res) => {
-    res.render('pages/home')
+    res.render('pages/home',{
+        ano: 2021
+    })
 });
 
 router.get('/login', (req, res) => {
@@ -22,9 +26,18 @@ router.get('/sobre', (req, res) => {
     res.render('pages/sobre')
 });
 
-// router.post('/cadastrar/funcionario', (req, res) => {
-//     const {nome, idade} = req.body
-//     res.json({nome, idade});
-// });
+router.get('/contato', (req, res) => {
+    res.render('pages/contato')
+});
+
+router.get('/dashboard', (req, res) => {
+    res.render('pages/dashboard')
+});
+
+router.post('/sessions', (req, res) => {
+    
+    console.log(req.body.email)
+});
+
 
 export default router;

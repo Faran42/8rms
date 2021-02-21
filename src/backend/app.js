@@ -2,7 +2,7 @@ import express from 'express'
 import exphbs from 'express-handlebars'
 import path from 'path'
 
-import router from '../backend/routes'
+import routes from './routes/index.routes'
 
 const app = express();
 const hbs = exphbs();
@@ -18,6 +18,6 @@ app.use(express.urlencoded({
     extended: true
   }))
 
-app.use(router);
+app.use(routes);
 
 export default app;

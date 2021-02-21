@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8RMS</title>
 
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/bootstrap-4.6.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.css">
 </head>
 
 <body>
@@ -27,26 +27,32 @@
                     </div>
                     <div class="navbar-collapse w-100 order-2 order-md-0 dual-collapse2">
                         <ul class="navbar-brand ml-auto">
-                            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>      
+                            <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
                         </ul>
                     </div>
                     <div class="navbar-collapse w-100 order-3 dual-collapse2">
                         <ul class="navbar-nav ml-auto">
+                            {{#if userName}}
+                                <button type="button" class="btn btn-outline-secondary">{{userName}}</button>
+                                {{else}}
                             <li class="nav-item">
-                                <button type="button" class="btn btn-outline-secondary">Cadastro</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                onclick="location.href='/cadastro'">Cadastro</button>
                             </li>
                             <li class="nav-item">
-                                <button type="button" class="btn btn-outline-secondary">Login</button>
-                            </li>
+                                <button type="button" class="btn btn-outline-secondary"
+                                onclick="location.href='/login'">Login</button>
+                            </li>    
+                            {{/if}}                            
                         </ul>
                     </div>
                 </nav>
             </div>
         </header>
 
-    {{{body}}}
+        {{{body}}}
 
 </body>
 

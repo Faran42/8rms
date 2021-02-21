@@ -1,22 +1,25 @@
 import { Router } from 'express'
 
-import sessionsController from './controllers/sessionsController'
+import loginRouter from './login.routes'
+import cadastroRouter from './cadastro.routes'
+import listagemRouter from './listagem.routes'
+
 
 const router = Router();
 
+router.use('/login', loginRouter);
+router.use('/cadastro', cadastroRouter);
+router.use('/listagem', listagemRouter);
+
 router.get('/', (req, res) => {
     res.render('pages/home',{
-        ano: 2021
+        userName: "Lobinho d=(^_^)=b"
     })
 });
 
-router.get('/login', (req, res) => {
-    res.render('pages/login')
-});
 
-router.get('/cadastro', (req, res) => {
-    res.render('pages/cadastro')
-});
+
+
 
 router.get('/listagem', (req, res) => {
     res.render('pages/listagem')

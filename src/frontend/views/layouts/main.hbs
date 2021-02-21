@@ -6,34 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8RMS</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="public/bootstrap-4.6.0-dist/css/bootstrap.css">
 </head>
 
 <body>
-    <header>
-        <table id="cabecalho">
-            <thead>
-                <tr>
-                    <th id="logo">
-                        <h1><a href="/">8RMS</a></h1>
-                    </th>
-                    <th id="inicio">
-                        <h4><a href="/">Início</a></h4>
-                    </th>
-                    <th id="sobre">
-                        <h4><a href="/sobre">Sobre</a></h4>
-                    </th>
-                    <th id="contato">
-                        <h4><a href="/contato">Contato</a></h4>
-                    </th>
-                    <th id="buttons">
-                        <button class="button" onclick="location.href='/cadastro'">Cadastrar</button>
-                        <button class="button" onclick="location.href='/login'">Login</button>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </header>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <nav class="navbar nav-masthead navbar-expand-md">
+                    <div class="mx-auto order-0">
+                        <ul class="navbar-nav mr-auto">
+                            <li>
+                                <h3 class="masthead-brand">8</h3>
+                            </li>
+                            <li>
+                                <h3 class="masthead-brand-rest">RMS</h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-collapse w-100 order-2 order-md-0 dual-collapse2">
+                        <ul class="navbar-brand ml-auto">
+                            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>      
+                        </ul>
+                    </div>
+                    <div class="navbar-collapse w-100 order-3 dual-collapse2">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-outline-secondary">Cadastro</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-outline-secondary">Login</button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
     {{{body}}}
 

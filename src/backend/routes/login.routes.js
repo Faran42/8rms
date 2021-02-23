@@ -1,5 +1,7 @@
 import { Router } from 'express'
 
+import sessionsController from '../controllers/sessionsController'
+
 const loginRouter = Router();
 
 loginRouter.get('/', (req, res) => {
@@ -23,5 +25,7 @@ loginRouter.post('/login', async (req, res) => {
         res.status(500).send()
     }
 })
+
+loginRouter.post('/sessions', sessionsController.create)
 
 export default loginRouter;

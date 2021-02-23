@@ -1,0 +1,38 @@
+<head>
+     <link rel="stylesheet" href="css/style-cadastro.css">
+</head>
+
+<main class="login">
+    <div class="container">
+        <div class="box">
+            <div id="login">
+                <img src="./login-icon.png" alt="login icon" id="icon-login">
+            </div>
+            <form action="/users" method="POST" onsubmit="TestarCPF()">
+                <div id="itens">
+                    <label for="name">Nome: </label>
+                    <input type="text" id="name" name="name" required>  
+                </div>
+                <div id="itens">
+                    <label for="email">E-mail: </label>
+                    <input type="email" id="e-mail" name="email" required>
+                </div>
+                <div id="itens">
+                    <label for="password">Senha: </label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div id="itens">
+                    <label for="passowrd-c">Confirmar senha: </label>
+                    <input type="password" id="password-c" name="passowrd-c" required>
+                </div>
+                <div id="confirmar">
+                    <input type="submit" id="enviar" value ="Cadastrar-se" />
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>8RMS</p>
+</footer>

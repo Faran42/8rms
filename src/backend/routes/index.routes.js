@@ -3,6 +3,8 @@ import { Router } from 'express'
 import loginRouter from './login.routes'
 import cadastroRouter from './cadastro.routes'
 import listagemRouter from './listagem.routes'
+import usersRouter from './users.routes'
+
 
 
 const router = Router();
@@ -10,10 +12,11 @@ const router = Router();
 router.use('/login', loginRouter);
 router.use('/cadastro', cadastroRouter);
 router.use('/listagem', listagemRouter);
+router.use('/users', usersRouter);
 
 router.get('/', (req, res) => {
     res.render('pages/home',{
-        userName: "Lobinho d=(^_^)=b"
+        userName: ''
     })
 });
 

@@ -1,27 +1,30 @@
 <head>
-     <link rel="stylesheet" href="css/style-login.css">
+    <link rel="stylesheet" href="/css/style-login.css">
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
 </head>
 
 <main class="login">
-    <div class="container">
-        <div class="box">
-            <img src="img/login-icon.png" alt="login icon" id="icon-login">
 
-            <div>
-                <form method="POST" action="/login/sessions">
-                    <input type="text" id="e-mail" name="email" placeholder="E-mail"><br>
-                    <input type="password" id="password" name="password" placeholder="Senha"><br>
-                    <input type="submit" value="Entrar">
-                </form>
-                
-            </div>
-
-            <button id="enviar">Enviar</button>
-
+    <form class="form-signin" method="POST" action="/login/sessions">
+        <div class="logo-login">
+            <img class="mb-4" src="/img/login-icon.png" alt="" width="72" height="72">
         </div>
-    </div>
+        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <label for="inputEmail" class="sr-only">E-mail</label>
+        <input type="email" id="e-mail" name="email" class="form-control" placeholder="E-mail" required autofocus>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Lembrar de mim
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar">Sign in</button>
+    </form>
 </main>
 
-<footer>
-    <p>8RMS</p>
+<footer class="mastfoot mt-auto">
+    <div class="inner">
+        <p>8RMS</p>
+    </div>
 </footer>

@@ -10,96 +10,49 @@ html, body {
     width: 100%;
 }
 
-/* Header ============= */
-header {
-    background: #1d1d4f;
-    padding: 2rem 0 2rem;
-    position: relative;
-}
-
-#inicio, #sobre, #contato {
-    color: #5b897f;
-}
-
-#inicio {
-    text-align: right;
-}
-
-#contato {
-    text-align: left;
-}
-
-header table {
-    min-width: 70%;
-}
-
-#logo {
-    color: #5b897f;
-    text-align: left;
-    padding-left: 2rem;
-}
-
-/* Main =============== */
-
-main {
-    background: #dbe5aa;
-}
-
-/* Footer ============= */
-footer {
-    color: #5b897f;
-    text-align: center;
-    background: #1d1d4f;
-    padding: 10px 0 10px;
-    position: relative;
-}
-
-/* Buttons ============= */
-
 /* Login ============= */
-.container {
-    width: 95vw;
-    height: 90vh;
+body {
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -ms-flex-align: center;
     align-items: center;
-}
-
-.box {
-    width: 300px;
-    height: 300px;
-    background: rgb(255, 255, 255);
+    color: #fff !important;
+  }
+  
+.h3 {
     text-align: center;
-    border: 1px solid #000;
 }
 
-#icon-login {
-    width: 60px;
-    height: 60px;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+.logo-login {
+    text-align: center;
 }
 
-#e-mail, #password {
-    width: 200px;
-    height: 30px;
-    margin-bottom: 1rem;
-    border-radius: 20px;
-    border-color: rgb(27, 3, 58);
-    font-size: 17px;
-    text-align: 1px;
-}
-
-#enviar {
-    background: #401766;
-    width: 5rem;
-    height: 2rem;
-    margin-bottom: 1rem;
-    border-radius: 20px;
-    color: #fff;
-    font-size: 15px;
-}
-#enviar:hover {
-    background: #7a65b4;
-}
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }

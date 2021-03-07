@@ -2,7 +2,7 @@ import express from 'express'
 import exphbs from 'express-handlebars'
 import path from 'path'
 import bodyParser from 'body-parser'
-import routes from './routes/index.routes'
+import routes from './routes'
 
 const app = express();
 

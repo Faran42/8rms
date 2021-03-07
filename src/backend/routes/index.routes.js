@@ -5,8 +5,6 @@ import cadastroRouter from './cadastro.routes'
 import listagemRouter from './listagem.routes'
 import usersRouter from './users.routes'
 
-
-
 const router = Router();
 
 router.use('/login', loginRouter);

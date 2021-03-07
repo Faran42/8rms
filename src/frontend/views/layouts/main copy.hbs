@@ -34,18 +34,19 @@
                     </div>
                     <div id="loginPanel">
                       <div class="navbar-collapse w-100 order-3 dual-collapse2">
-
-                        <input type="button" id="loginBtn" class="btn btn-outline-secondary" value="Login"  hiden/>
-
-                        <ul id="cadastrarLogar" class="navbar-nav ml-auto">  
-                          <li class="nav-item">
-                              <button type="button" class="btn btn-outline-secondary"
-                              onclick="location.href='/users'">Cadastro</button>
-                          </li>
-                          <li class="nav-item">
-                              <button type="button" class="btn btn-outline-secondary"
-                              onclick="location.href='/login'">Login</button>
-                          </li>                                                           
+                        <ul class="navbar-nav ml-auto">
+                            {{#if userName}}
+                              <button type="button" class="btn btn-outline-secondary">{{userName}}</button>
+                            {{else}}
+                              <li class="nav-item">
+                                  <button type="button" class="btn btn-outline-secondary"
+                                  onclick="location.href='/users'">Cadastro</button>
+                              </li>
+                              <li class="nav-item">
+                                  <button type="button" class="btn btn-outline-secondary"
+                                  onclick="location.href='/login'">Login</button>
+                              </li>    
+                            {{/if}}                            
                         </ul>
                     </div>
                     </div>
@@ -56,12 +57,9 @@
 
         <script>
           var userName = sessionStorage.getItem('userName');
-          
-          if(userName){
-            document.getElementById("loginBtn").value = userName
-            document.getElementById("loginBtn").hidden = false
-            document.getElementById("cadastrarLogar").hidden = true
 
+          if(userName){
+            document.getElementById("loginPanel").innerHTML = 
           }
         </script>
 

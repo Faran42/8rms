@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt'
-
 import usersDB from '../util/users'
 
 const userController =  {
@@ -10,7 +9,7 @@ const userController =  {
     async create(req, res){
         
         try {
-            const { email, password} = req.body
+            const {name, email, password} = req.body
             console.log(req.body)
             
             const salt = await bcrypt.genSalt()
@@ -21,17 +20,24 @@ const userController =  {
             console.log(hashedPassword)
     
             const user = {
+                name: name,
                 email: email,
                 password: hashedPassword
             }
+
             usersDB.push(user)
             res.status(201).redirect('/')
             console.log(usersDB)
+
         } catch(e) {
             console.log(e)
             res.status(500).send()
         }
-    }    
+    },    
+
+    show(req, res){
+      res.json(usersDB)
+    }
 }
 
 export default userController;

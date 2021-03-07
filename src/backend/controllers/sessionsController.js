@@ -13,15 +13,16 @@ const sessionsController = {
         if (!user) {
             return res.status(400).send('Cannot find user')
         }
+
         try {
-            console.log('aaaaaaaaa',password, user.password)
             if (await bcrypt.compare(password, user.password)) {
                 sessionsDB.push(user)
 
                 console.log('Sessions: ',sessionsDB)
 
-                res.render('pages/home',{
-                    userName: user.email
+                res.status(201).render('pages/loading',{
+                    data: user.name,
+                    path: '/'
                 })
                 
             } else {

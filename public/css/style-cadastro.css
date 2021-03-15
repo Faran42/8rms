@@ -10,73 +10,24 @@ html, body {
     width: 100%;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Header ============= */
-header {
-    background: #1d1d4f;
-    padding: 2rem 0 2rem;
-    position: relative;
-}
-
-#inicio, #sobre, #contato {
-    color: #5b897f;
-}
-
-#inicio {
-    text-align: right;
-}
-
-#contato {
-    text-align: left;
-}
-
-header table {
-    min-width: 70%;
-}
-
-#logo {
-    color: #5b897f;
-    text-align: left;
-    padding-left: 2rem;
-}
-
-/* Main =============== */
-
-main {
-    background: #dbe5aa;
-}
-
-/* Footer ============= */
-footer {
-    color: #5b897f;
-    text-align: center;
-    background: #1d1d4f;
-    padding: 10px 0 10px;
-    position: relative;
-}
-
 /* Buttons ============= */
 
-/* Login ============= */
-.container {
-    width: 95vw;
-    height: 90vh;
+
+/* Sign up ============= */
+
+body {
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -ms-flex-align: center;
     align-items: center;
+    color: #fff !important;
 }
 
-.box {
-    width: 650px;
-    height: 350px;
-    padding-left: 1rem;
-    background: rgb(255, 255, 255);
-    border: 1px solid #000;
+.form-signin {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
 }
 
 #icon-login {
@@ -94,9 +45,7 @@ footer {
     width: 200px;
     height: 30px;
     padding-left: 10px;
-    margin-bottom: 1rem;
-    border-radius: 20px;
-    border-color: rgb(27, 3, 58);
+    border-radius: 5px;
     font-size: 17px;
     text-align: 1px;
 }
@@ -105,28 +54,7 @@ footer {
     width: 400px;
     height: 30px;
     padding-left: 10px;
-    margin-bottom: 1rem;
-    border-radius: 20px;
-    border-color: rgb(27, 3, 58);
+    border-radius: 5px;
     font-size: 17px;
     text-align: 1px;
-}
-
-#enviar {
-    background: #401766;
-    width: 8rem;
-    height: 2rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 15px;
-    text-align: center;
-}
-
-#enviar:hover {
-    background: #7a65b4;
-}
-
-#confirmar {
-    text-align: center;
 }

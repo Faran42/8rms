@@ -6,60 +6,17 @@
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff !important;
 }
-
-/* Header ============= */
-header {
-    background: #1d1d4f;
-    padding: 2rem 0 2rem;
-    position: relative;
-}
-
-#inicio, #sobre, #contato {
-    color: #5b897f;
-}
-
-#inicio {
-    text-align: right;
-}
-
-#contato {
-    text-align: left;
-}
-
-header table {
-    min-width: 70%;
-}
-
-#logo {
-    color: #5b897f;
-    text-align: left;
-    padding-left: 2rem;
-}
-
-/* Main =============== */
-
-main {
-    background: #dbe5aa;
-}
-
-/* Footer ============= */
-footer {
-    color: #5b897f;
-    text-align: center;
-    background: #1d1d4f;
-    padding: 10px 0 10px;
-    position: relative;
-}
-
-/* Buttons ============= */
 
 /* Listagem ============= */
 .container {
@@ -86,4 +43,8 @@ footer {
 #dados {
     background: rgb(94, 95, 92);
     color: #fff;
+}
+
+h2 {
+    color: rgb(245, 116, 11);
 }

@@ -1,0 +1,40 @@
+/* Global ============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    padding: 10px;
+}
+
+/* Login ============= */
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff !important;
+}
+
+.form-signin {
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+  
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.form-signin button {
+    width: 200px;
+}

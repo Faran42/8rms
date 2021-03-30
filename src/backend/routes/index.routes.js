@@ -18,10 +18,6 @@ router.get('/', (req, res) => {
     })
 });
 
-
-
-
-
 router.get('/listagem', (req, res) => {
     res.render('pages/listagem')
 });

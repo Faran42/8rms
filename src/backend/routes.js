@@ -1,21 +1,22 @@
 import { Router } from 'express'
 
-import UsersController from './controllers/UsersController'
+// import UsersController from './controllers/UsersController'
+import UserController from './controllers/UserController'
 import sessionsController from './controllers/sessionsController'
 
-const router = Router();
+const routes = Router();
 
-router.get('/', (req, res) => {
+routes.get('/', (req, res) => {
     res.render('pages/home',{
         userName: ''
     })
 });
 
-router.get('/login', (req, res) => {
+routes.get('/login', (req, res) => {
   res.render('pages/login')
 });
 
-router.post('/login', async (req, res) => {
+routes.post('/login', async (req, res) => {
   const { name, password } = req.body
   const user = users.find(user => user.name = name)
 
@@ -33,36 +34,38 @@ router.post('/login', async (req, res) => {
   }
 })
 
-router.post('/sessions', sessionsController.create)
+routes.post('/sessions', sessionsController.create)
 
 
 
-router.get('/listagem', (req, res) => {
+routes.get('/listagem', (req, res) => {
   res.render('pages/listagem')
 });
 
-router.get('/sobre', (req, res) => {
+routes.get('/sobre', (req, res) => {
   res.render('pages/sobre')
 });
 
-router.get('/contato', (req, res) => {
+routes.get('/contato', (req, res) => {
   res.render('pages/contato')
 });
 
-router.get('/dashboard', (req, res) => {
+routes.get('/dashboard', (req, res) => {
   res.render('pages/dashboard')
 });
 
-router.get('/cadastro', (req, res) => {
+routes.get('/cadastro', (req, res) => {
   res.render('pages/cadastro')});
 
 
-router.get('/listagem', (req, res) => {
+routes.get('/listagem', (req, res) => {
   res.render('pages/listagem')
 });
 
-router.get('/users', UsersController.index)
-router.post('/users', UsersController.create)
-router.get('/users/show', UsersController.show)
+// routes.get('/users', UsersController.index)
+// routes.post('/users', UsersController.create)
+// routes.get('/users/show', UsersController.show)
 
-export default router;
+routes.post('/users', UserController.store)
+
+export default routes;

@@ -2,6 +2,8 @@ import { Router } from 'express'
 
 // import UsersController from './controllers/UsersController'
 import UserController from './controllers/UserController'
+import AddressController from './controllers/AddressController'
+
 import sessionsController from './controllers/sessionsController'
 
 const routes = Router();
@@ -66,6 +68,10 @@ routes.get('/listagem', (req, res) => {
 // routes.post('/users', UsersController.create)
 // routes.get('/users/show', UsersController.show)
 
+routes.get('/users', UserController.index)
 routes.post('/users', UserController.store)
+
+routes.get('/users/:user_id/addresses', AddressController.index)
+routes.post('/users/:user_id/addresses', AddressController.store)
 
 export default routes;

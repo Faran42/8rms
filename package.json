@@ -13,7 +13,6 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
-    "knex": "^0.95.2",
     "package": "^1.0.1",
     "pg": "^8.5.1",
     "sequelize": "^6.6.2",

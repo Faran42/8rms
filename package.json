@@ -17,9 +17,11 @@
     "pg": "^8.5.1",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/sequelize": "^4.28.9",
     "nodemon": "^2.0.7"
   }
 }

@@ -3,6 +3,7 @@ import { Router } from 'express'
 // import UsersController from './controllers/UsersController'
 import UserController from './controllers/UserController'
 import AddressController from './controllers/AddressController'
+import FuncionarioController from './controllers/FuncionarioController'
 
 import sessionsController from './controllers/sessionsController'
 
@@ -73,5 +74,11 @@ routes.post('/users', UserController.store)
 
 routes.get('/users/:user_id/addresses', AddressController.index)
 routes.post('/users/:user_id/addresses', AddressController.store)
+
+//rotas de funcionarios
+
+routes.get('/funcionario', FuncionarioController.index)
+routes.post('/funcionario', FuncionarioController.store)
+
 
 export default routes;

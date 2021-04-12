@@ -7,9 +7,15 @@ export default {
 
   async index(req, res) {
     const funcionarios = await Funcionario.findAll();
-    console.log(funcionarios)
 
-    return res.json(funcionarios);
+    const funcionariosDivulgavel = funcionarios.map((array) => { 
+      const { id, nome, sobrenome, email, setor, cargo, salario } = array 
+      return { id, nome, sobrenome, email, setor, cargo, salario }
+    })
+
+    console.log('GET - Funcionarios: ', funcionariosDivulgavel)
+
+    return res.json(funcionariosDivulgavel);
   },
 
   async store(req, res) {

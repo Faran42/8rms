@@ -13,7 +13,8 @@ const sessionsController = {
 
         console.log('EMAIL: ', email)
         const funcionario = await Funcionario.findOne({ where: { email: email } })
-        console.log('Funcionário? ',funcionario)
+        const { id } = funcionario
+        console.log('Funcionário? ',id)
     
         if (!funcionario) {
             return res.status(400).send('Cannot find funcionario')
@@ -23,7 +24,7 @@ const sessionsController = {
             if (await bcrypt.compare(password, funcionario.password)) {
                 sessionsDB.push(funcionario)
 
-                console.log('Sessions: ',sessionsDB)
+                // console.log('Sessions: ',sessionsDB)
 
                 res.status(201).render('pages/loading',{
                     data: funcionario.nome,

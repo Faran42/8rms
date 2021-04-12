@@ -1,28 +1,33 @@
 import bcrypt from 'bcrypt'
 
 import usersDB from '../util/users'
+
+import Funcionario from '../models/Funcionario';
+
 import sessionsDB from '../util/sessions'
 
 const sessionsController = {
 
     async create(req, res) {
         const { email, password } = req.body
-        const user = usersDB.find(user => user.email = email)
-        console.log('User? ',user)
+
+        console.log('EMAIL: ', email)
+        const funcionario = await Funcionario.findOne({ where: { email: email } })
+        console.log('Funcionário? ',funcionario)
     
-        if (!user) {
-            return res.status(400).send('Cannot find user')
+        if (!funcionario) {
+            return res.status(400).send('Cannot find funcionario')
         }
 
         try {
-            if (await bcrypt.compare(password, user.password)) {
-                sessionsDB.push(user)
+            if (await bcrypt.compare(password, funcionario.password)) {
+                sessionsDB.push(funcionario)
 
                 console.log('Sessions: ',sessionsDB)
 
                 res.status(201).render('pages/loading',{
-                    data: user.name,
-                    path: '/'
+                    data: funcionario.nome,
+                    path: '/dashboard'
                 })
                 
             } else {

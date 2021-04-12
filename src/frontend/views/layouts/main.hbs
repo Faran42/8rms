@@ -25,8 +25,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="navbar-collapse w-100 order-2 order-md-0 dual-collapse2">
-                        <ul class="navbar-brand ml-auto">
+                    <div class="navbar-collapse w-100 order-2 order-md-0 dual-collapse2"  >
+                        <ul class="navbar-brand ml-auto" id="navButtons">
                             <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a></li>
                             <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
@@ -61,6 +61,7 @@
             document.getElementById("loginBtn").value = userName
             document.getElementById("loginBtn").hidden = false
             document.getElementById("cadastrarLogar").hidden = true
+            document.getElementById("navButtons").hidden = true
           }
 
         </script>

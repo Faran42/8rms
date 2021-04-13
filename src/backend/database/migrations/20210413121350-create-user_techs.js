@@ -1,23 +1,29 @@
 'use strict';
+
 const { DataTypes } = require("sequelize");
-// Para saber quais opções de DataTpyes usar https://sequelize.org/master/manual/model-basics.html
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', {
-      id: {
+    await queryInterface.createTable('user_techs', { 
+      id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      name: {
-        type: DataTypes.STRING,
+      user_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-      },
-      email: {
-        type: DataTypes.STRING,
+        references: { model: 'users', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },      
+      tech_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
+        references: { model: 'techs', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       created_at: {
         type: DataTypes.DATE,
@@ -26,11 +32,11 @@ module.exports = {
       updated_at: {
         type: DataTypes.DATE,
         allowNull: false,
-      },
+      },   
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('user_techs')
   }
 };

@@ -1,7 +1,5 @@
 import bcrypt from 'bcrypt'
 
-import usersDB from '../util/users'
-
 import Funcionario from '../models/Funcionario';
 
 import sessionsDB from '../util/sessions'

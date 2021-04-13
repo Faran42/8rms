@@ -1,11 +1,13 @@
 import { Router } from 'express'
 
-// import UsersController from './controllers/UsersController'
-import UserController from './controllers/UserController'
-import AddressController from './controllers/AddressController'
 import FuncionarioController from './controllers/FuncionarioController'
 
 import sessionsController from './controllers/sessionsController'
+
+import UserController from './controllers/UserController'
+import AddressController from './controllers/AddressController'
+import TechController from './controllers/TechController'
+import ReportController from './controllers/ReportController'
 
 const routes = Router();
 
@@ -35,11 +37,7 @@ routes.post('/login', async (req, res) => {
   } catch {
       res.status(500).send()
   }
-})
-
-routes.post('/sessions', sessionsController.create)
-
-
+});
 
 routes.get('/listagem', (req, res) => {
   res.render('pages/listagem')
@@ -58,16 +56,26 @@ routes.get('/dashboard', (req, res) => {
 });
 
 routes.get('/cadastro', (req, res) => {
-  res.render('pages/cadastro')});
-
-
+  res.render('pages/cadastro')
+});
+  
+  
 routes.get('/listagem', (req, res) => {
   res.render('pages/listagem')
 });
 
-// routes.get('/users', UsersController.index)
-// routes.post('/users', UsersController.create)
-// routes.get('/users/show', UsersController.show)
+routes.post('/sessions', sessionsController.create)
+  
+  //rotas de funcionarios
+
+routes.get('/funcionario', FuncionarioController.index)
+routes.post('/funcionario', FuncionarioController.store)
+
+
+//=====================================================================
+
+//Rotas dedicadas aos testes de implementação da base de dados e suas tabelas.
+//Essas rotas não são parte do projeto, e sim testes de aprendizado.
 
 routes.get('/users', UserController.index)
 routes.post('/users', UserController.store)
@@ -75,10 +83,11 @@ routes.post('/users', UserController.store)
 routes.get('/users/:user_id/addresses', AddressController.index)
 routes.post('/users/:user_id/addresses', AddressController.store)
 
-//rotas de funcionarios
+routes.get('/users/:user_id/techs', TechController.index)
+routes.post('/users/:user_id/techs', TechController.store)
+routes.delete('/users/:user_id/techs', TechController.delete)
 
-routes.get('/funcionario', FuncionarioController.index)
-routes.post('/funcionario', FuncionarioController.store)
+routes.get('/report', ReportController.show);
 
 
 export default routes;

@@ -24,9 +24,9 @@ a:hover {
  */
 
 html, body {
-  height: 100%;
-  width: 100%;
+  width: auto;
   background: rgb(48, 6, 65) !important;
+  height: 100%;
 }
 
 body {
@@ -36,11 +36,6 @@ body {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
-
-.cover-container {
-  max-width: 100%;
-}
-
 
 /*
  * Header
@@ -87,7 +82,7 @@ body {
   margin-left: 1rem;
 }
 
-.nav-masthead .active {
+.nav-masthead .active-inicio {
   color: #fff;
   border-bottom-color: #fff;
 }

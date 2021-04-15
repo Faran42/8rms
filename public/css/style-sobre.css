@@ -17,3 +17,21 @@ body {
     align-items: center;
     color: #fff !important;
 }
+
+.nav-masthead .active-inicio {
+    padding: .25rem 0 !important;
+    font-weight: 700 !important;
+    color: rgba(255, 255, 255, .5) !important;
+    background-color: transparent !important;
+    border-bottom: .25rem solid transparent !important;
+  }
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+    border-bottom-color: rgba(255, 255, 255, .25) !important;
+}
+
+.nav-masthead .active-sobre {
+    color: #fff;
+    border-bottom-color: #fff;
+  }

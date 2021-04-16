@@ -1,6 +1,7 @@
 import { Router } from 'express'
 
 import FuncionarioController from './controllers/FuncionarioController'
+import CargoController from './controllers/CargoController'
 
 import sessionsController from './controllers/sessionsController'
 
@@ -70,6 +71,9 @@ routes.post('/sessions', sessionsController.create)
 
 routes.get('/funcionario', FuncionarioController.index)
 routes.post('/funcionario', FuncionarioController.store)
+
+routes.get('/cargo', CargoController.index)
+routes.post('/cargo', CargoController.store)
 
 
 //=====================================================================

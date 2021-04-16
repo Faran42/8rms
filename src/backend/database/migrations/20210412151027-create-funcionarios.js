@@ -26,16 +26,21 @@ module.exports = {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      cpf: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       setor: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       cargo: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       administrador: {
         type: DataTypes.BOOLEAN,
+        defaultValue: false,
         allowNull: false,
       },
       salario: {

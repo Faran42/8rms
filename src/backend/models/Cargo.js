@@ -1,0 +1,18 @@
+import { Model, DataTypes } from 'sequelize'
+
+class Cargo extends Model {
+  static init(connection) {
+    super.init({
+      nome: DataTypes.STRING,
+      descricao: DataTypes.STRING      
+    }, {
+      sequelize: connection
+    })
+  }
+
+  // static associate(models){
+  //   this.hasMany(models.Address, { foreignKey: 'user_id', as: 'addresses' })
+  // }
+}
+
+export default Cargo;

@@ -8,8 +8,8 @@ export default {
   async index(req, res) {
     const funcionarios = await Funcionario.findAll();
 
-    const funcionariosDivulgavel = funcionarios.map((array) => { 
-      const { id, nome, sobrenome, email, setor, cargo, salario } = array 
+    const funcionariosDivulgavel = funcionarios.map((array) => {
+      const { id, nome, sobrenome, email, setor, cargo, salario } = array
       return { id, nome, sobrenome, email, setor, cargo, salario }
     })
 
@@ -26,12 +26,8 @@ export default {
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, 5);
 
-    console.log(id, nome, sobrenome, email, hashedPassword, setor, cargo, administrador, salario);
-    
-    const funcionario = await Funcionario.create({ id, nome, sobrenome, email, password:hashedPassword, setor, cargo, administrador, salario });
+    const funcionario = await Funcionario.create({ id, nome, sobrenome, email, password: hashedPassword, setor, cargo, administrador, salario });
 
     return res.json(funcionario);
   }
-
-  
-} 
+}

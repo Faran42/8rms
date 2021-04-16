@@ -15,7 +15,5 @@ export default {
     const user = await User.create({ name, email });
 
     return res.json(user);
-  }
-
-  
+  }  
 } 

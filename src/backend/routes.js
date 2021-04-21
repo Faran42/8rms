@@ -22,24 +22,6 @@ routes.get('/login', (req, res) => {
   res.render('pages/login')
 });
 
-routes.post('/login', async (req, res) => {
-  const { name, password } = req.body
-  const user = users.find(user => user.name = name)
-
-  if (!user) {
-      return res.status(400).send('Cannot find user')
-  }
-  try {
-      if (await bcrypt.compare(password, user.password)) {
-          res.send('Success')
-      } else {
-          res.send('Not Allowed');
-      }
-  } catch {
-      res.status(500).send()
-  }
-});
-
 routes.get('/listagem', (req, res) => {
   res.render('pages/listagem')
 });
@@ -53,28 +35,57 @@ routes.get('/contato', (req, res) => {
 });
 
 routes.get('/dashboard', (req, res) => {
-  res.render('pages/dashboard')
+  res.render('pages/dashboard', {
+    layout: 'dashboard',
+    title: 'Dashboard'
+  })
 });
 
 routes.get('/cadastro', (req, res) => {
   res.render('pages/cadastro')
 });
   
-  
-routes.get('/listagem', (req, res) => {
-  res.render('pages/listagem')
-});
-
 routes.post('/sessions', sessionsController.create)
-  
-  //rotas de funcionarios
+
+routes.get('/tdt', (req, res) => {
+  res.render('pages/dataTableTeste', {
+    layout: 'dashboard',
+    title: 'Teste da data table'
+  })
+})
+
+//rotas de funcionarios
+
+routes.get('/cadastrar/funcionario', (req, res) => {
+  res.render('pages/cadastroUsuario', {
+    title: 'Cadastro de Funcionário',
+    layout: 'dashboard'
+  })
+})
 
 routes.get('/funcionario', FuncionarioController.index)
 routes.post('/funcionario', FuncionarioController.store)
 
-routes.get('/cargo', CargoController.index)
-routes.post('/cargo', CargoController.store)
+//rotas de cargos
 
+routes.get('/cargo', CargoController.index)
+routes.get('/cadastrar/cargo', (req, res) => {
+  res.render('pages/cargo', {
+    layout: 'dashboard',
+    title: 'Cadastrar Cargo'
+  })
+})
+
+routes.post('/cargo', CargoController.store)
+routes.get('/cargo/:cargo_id', CargoController.cargoDetalhes)
+routes.put('/cargo/:cargo_id', CargoController.update)
+routes.delete('/cargo/:cargo_id', CargoController.delete)
+
+//rotas de setor
+
+routes.get('/cadastrar/setor', (req, res) => {
+  res.render('pages/setor')
+})
 
 //=====================================================================
 
@@ -92,6 +103,5 @@ routes.post('/users/:user_id/techs', TechController.store)
 routes.delete('/users/:user_id/techs', TechController.delete)
 
 routes.get('/report', ReportController.show);
-
 
 export default routes;

@@ -36,7 +36,6 @@ export default {
     await user.addTech(tech)
 
     return res.json(tech)
-
   },
 
   async delete(req, res) {
@@ -57,6 +56,4 @@ export default {
 
     return res.json();
   }
-
-
 }

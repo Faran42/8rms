@@ -2,72 +2,72 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8RMS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8RMS</title>
 
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.css">
 </head>
 
 <body>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="masthead mb-auto">
-            <div class="inner">
-                <nav class="navbar nav-masthead navbar-expand-md">
-                    <div class="mx-auto order-0">
-                        <ul class="navbar-nav mr-auto">
-                            <li>
-                                <h3 class="masthead-brand">8</h3>
-                            </li>
-                            <li>
-                                <h3 class="masthead-brand-rest">RMS</h3>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="navbar-collapse w-100 order-2 order-md-0 dual-collapse2"  >
-                        <ul class="navbar-brand ml-auto" id="navButtons">
-                            <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
-                        </ul>
-                    </div>
-                    <div id="loginPanel">
-                      <div class="navbar-collapse w-100 order-3 dual-collapse2">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <nav class="navbar nav-masthead navbar-expand-md">
+          <div class="mx-auto order-0">
+            <ul class="navbar-nav mr-auto">
+              <li>
+                <h3 class="masthead-brand">8</h3>
+              </li>
+              <li>
+                <h3 class="masthead-brand-rest">RMS</h3>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-collapse w-100 order-2 order-md-0 dual-collapse2">
+            <ul class="navbar-brand ml-auto" id="navButtons">
+              <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a></li>
+              <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
+            </ul>
+          </div>
+          <div id="loginPanel">
+            <div class="navbar-collapse w-100 order-3 dual-collapse2">
 
-                        <input type="button" id="loginBtn" class="btn btn-outline-secondary" value="Login" hidden/>
+              <input type="button" id="loginBtn" class="btn btn-outline-secondary" value="Login" hidden />
 
-                        <ul id="cadastrarLogar" class="navbar-nav ml-auto">  
-                          <li class="nav-item">
-                              <button type="button" class="btn btn-outline-secondary"
-                              onclick="location.href='/users'">Cadastro</button>
-                          </li>
-                          <li class="nav-item">
-                              <button type="button" class="btn btn-outline-secondary"
-                              onclick="location.href='/login'">Login</button>
-                          </li>                                                           
-                        </ul>
-                    </div>
-                    </div>
-                    
-                </nav>
+              <ul id="cadastrarLogar" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <button type="button" class="btn btn-outline-secondary"
+                    onclick="location.href='/users'">Cadastro</button>
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="btn btn-outline-secondary"
+                    onclick="location.href='/login'">Login</button>
+                </li>
+              </ul>
             </div>
-        </header>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-        <script>
-          var userName = sessionStorage.getItem('userName');
-          
-          if(userName){
-            document.getElementById("loginBtn").value = userName
-            document.getElementById("loginBtn").hidden = false
-            document.getElementById("cadastrarLogar").hidden = true
-            document.getElementById("navButtons").hidden = true
-          }
-
-        </script>
-
-        {{{body}}}
-
+  {{{body}}}
+  
+  </div>
 </body>
+
+<script>
+  var userName = sessionStorage.getItem('userName');
+
+  if (userName) {
+    document.getElementById("loginBtn").value = userName
+    document.getElementById("loginBtn").hidden = false
+    document.getElementById("cadastrarLogar").hidden = true
+    document.getElementById("navButtons").hidden = true
+  }
+
+</script>
 
 </html>

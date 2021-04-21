@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br" id="my-html">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8RMS</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      color: #fff
+    }
+  </style>
+
+
+</head>
+
+<body id="my-body">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <nav class="navbar nav-masthead navbar-expand-md">
+          <div class="mx-auto order-0">
+            <ul class="navbar-nav mr-auto">
+              <li>
+                <h3 class="masthead-brand">8</h3>
+              </li>
+              <li>
+                <h3 class="masthead-brand-rest">RMS</h3>
+              </li>
+            </ul>
+          </div>
+          <div id="loginPanel">
+            <div class="navbar-collapse w-100 order-3 dual-collapse2">
+
+              <input type="button" id="loginBtn" class="btn btn-outline-secondary" value="Login" hidden />
+
+              <ul id="cadastrarLogar" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <button type="button" class="btn btn-outline-secondary"
+                    onclick="location.href='/users'">Cadastro</button>
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="btn btn-outline-secondary"
+                    onclick="location.href='/login'">Login</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Empresa</span>
+                <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                  <span data-feather="plus-circle"></span>
+                </a>
+              </h6>
+              <li class="nav-item">
+                <a class="nav-link active" href="/dashboard">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/funcionario/index">
+                  <span data-feather="file"></span>
+                  Funcionarios
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cargo">
+                  <span data-feather="shopping-cart"></span>
+                  Cargos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/setor/index">
+                  <span data-feather="users"></span>
+                  Setores
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Folhas de pagamento
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Ferramentas</span>
+              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="/cadastrar/funcionario">
+                  <span data-feather="file-text"></span>
+                  Adicionar funcionario
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cadastrar/cargo">
+                  <span data-feather="file-text"></span>
+                  Adicionar cargo
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cadastrar/setor">
+                  <span data-feather="file-text"></span>
+                  Adicionar setor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Adicionar folha de pagamento
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">{{title}}</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Compartilhar</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
+              </div>
+              <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                Este ano
+              </button>
+            </div>
+          </div>
+
+          {{{body}}}
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"></script>
+
+<script>
+  var userName = sessionStorage.getItem('userName');
+
+  if (userName) {
+    document.getElementById("loginBtn").value = userName
+    document.getElementById("loginBtn").hidden = false
+    document.getElementById("cadastrarLogar").hidden = true
+    document.getElementById("navButtons").hidden = true
+  }
+
+  function updateCargo(id, nome, descicao) {
+    axios.put('/cargo/' + id).then(
+      function (response) {
+        location.reload()
+        return false;
+      })
+  }
+  function deleteCargo(id) {
+    axios.delete('/cargo/' + id).then(
+      function (response) {
+        location.reload()
+        return false;
+      })
+  }
+</script>
+
+</html>

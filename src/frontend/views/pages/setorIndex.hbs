@@ -1,0 +1,27 @@
+
+<table id="setoresTable" class="table table-striped bg-white table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Ação</th>
+      <th scope="col">Setor</th>
+      <th scope="col">Descrição</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+    <tr>
+      <th scope="row">
+        <a href="/Setor/{{this.id}}">
+          <button class="btn btn-primary">Editar</button>
+        </a>
+        <a onclick="deleteSetor('{{this.id}}')">
+          <button class="btn btn-danger">Excluir</button>
+        </a>        
+      </th>
+      <td>{{this.nome}}</td>
+      <td>{{this.descricao}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

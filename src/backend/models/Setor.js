@@ -6,7 +6,8 @@ class Setor extends Model {
       nome: DataTypes.STRING,
       descricao: DataTypes.STRING      
     }, {
-      sequelize: connection
+      sequelize: connection,
+      tableName: 'setores'
     })
   }
 

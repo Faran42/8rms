@@ -7,7 +7,7 @@ module.exports = {
   define: {
     timestamps: true, //created_at, updated_at
     underscored: true, //nomes de tableas e colunas em Snake case (nome_nome)
-
+    freezeTableName: false //impede o sequelize de pluralizar os nomes
   },
 }
 

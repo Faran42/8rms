@@ -1,0 +1,14 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  
+  <div id="itens">
+    <label for="nome" style="color: #fff">Nome do setor: </label>
+    <input type="text" id="nomeSetorDetalhes" name="nome" value="{{data.nome}}" required>
+  </div>
+
+  <div id="itens">
+    <label for="desc" style="color: #fff">Descrição: </label>
+    <input type="text" id="descricaoSetorDetalhes" name="descricao" value="{{data.descricao}}"required>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" onclick="updateSetor('{{data.id}}')" value="Entrar">Salvar</button>
+    
+</main>

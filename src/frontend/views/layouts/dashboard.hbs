@@ -98,7 +98,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/setor/index">
+                <a class="nav-link" href="/setor">
                   <span data-feather="users"></span>
                   Setores
                 </a>
@@ -184,7 +184,7 @@
     document.getElementById("cadastrarLogar").hidden = true
     document.getElementById("navButtons").hidden = true
   }
-
+  
   function updateCargo(id) {
     axios.put('/cargo/' + id, {
       nome: document.getElementById("nomeCargoDetalhes").value,
@@ -196,9 +196,29 @@
       })   
           
   }
-  //window.location.href = "/cargo"
+  
   function deleteCargo(id) {
     axios.delete('/cargo/' + id).then(
+      function (response) {
+        location.reload()
+        return false;
+      })
+  }
+
+  function updateSetor(id) {
+    axios.put('/setor/' + id, {
+      nome: document.getElementById("nomeSetorDetalhes").value,
+      descricao: document.getElementById("descricaoSetorDetalhes").value,
+    }).then(
+      function (response) {
+        window.location.href = "/setor"
+        return false;
+      })   
+          
+  }
+  
+  function deleteSetor(id) {
+    axios.delete('/setor/' + id).then(
       function (response) {
         location.reload()
         return false;

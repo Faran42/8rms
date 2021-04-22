@@ -2,6 +2,7 @@ import { Router } from 'express'
 
 import FuncionarioController from './controllers/FuncionarioController'
 import CargoController from './controllers/CargoController'
+import SetorController from './controllers/SetorController'
 
 import sessionsController from './controllers/sessionsController'
 
@@ -83,9 +84,18 @@ routes.delete('/cargo/:cargo_id', CargoController.delete)
 
 //rotas de setor
 
+routes.get('/setor', SetorController.index)
 routes.get('/cadastrar/setor', (req, res) => {
-  res.render('pages/setor')
+  res.render('pages/setor',{
+    layout: 'dashboard',
+    title: 'Cadastrar Setor'
+  })
 })
+
+routes.post('/setor', SetorController.store)
+routes.get('/setor/:setor_id', SetorController.setorDetalhes)
+routes.put('/setor/:setor_id', SetorController.update)
+routes.delete('/setor/:setor_id', SetorController.delete)
 
 //=====================================================================
 

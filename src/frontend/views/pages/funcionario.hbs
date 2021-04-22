@@ -1,14 +1,20 @@
 <head>
     <link rel="stylesheet" href="css/style-cadastro.css">
     <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+
+    <style>
+      body {
+        color: #fff
+      }
+    </style>
 </head>
 
 <main class="login">
 
     <form class="form-signin" action="/users" method="POST" onsubmit="TestarCPF()">
-        <div id="login">
+        {{!-- <div id="login">
             <img src="/img/login-icon.png" alt="login icon" id="icon-login">
-        </div>
+        </div> --}}
         <div id="itens">
             <label for="name">Nome: </label>
             <input type="text" id="name" name="name" required>
@@ -45,14 +51,10 @@
             </select>
         </div>
         <div class="mb-3">
-            <button class="btn btn-primary btn-block" type="submit" id="enviar">Cadastrar</button>
+            <button class="btn btn-primary btn-block col-md-4" type="submit" id="enviar">Cadastrar</button>
         </div>
     </form>
 
 </main>
 
-<footer class="mastfoot mt-auto">
-    <div class="inner">
-        <p>8RMS</p>
-    </div>
-</footer>
+<footer class="mastfoot mt-auto"></footer>

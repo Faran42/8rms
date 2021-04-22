@@ -58,18 +58,20 @@ routes.get('/tdt', (req, res) => {
 //rotas de funcionarios
 
 routes.get('/cadastrar/funcionario', (req, res) => {
-  res.render('pages/cadastroUsuario', {
-    title: 'Cadastro de Funcionário',
+  res.render('pages/funcionario', {
+    title: 'Cadastrar Funcionário',
     layout: 'dashboard'
   })
 })
 
 routes.get('/funcionario', FuncionarioController.index)
+routes.get('/funcionario/:funcionario_id', FuncionarioController.funcionarioDetalhes)
 routes.post('/funcionario', FuncionarioController.store)
+routes.put('/funcionario/:funcionario_id', FuncionarioController.update)
+routes.delete('/funcionario/:funcionario_id', FuncionarioController.delete)
 
 //rotas de cargos
 
-routes.get('/cargo', CargoController.index)
 routes.get('/cadastrar/cargo', (req, res) => {
   res.render('pages/cargo', {
     layout: 'dashboard',
@@ -77,8 +79,9 @@ routes.get('/cadastrar/cargo', (req, res) => {
   })
 })
 
-routes.post('/cargo', CargoController.store)
+routes.get('/cargo', CargoController.index)
 routes.get('/cargo/:cargo_id', CargoController.cargoDetalhes)
+routes.post('/cargo', CargoController.store)
 routes.put('/cargo/:cargo_id', CargoController.update)
 routes.delete('/cargo/:cargo_id', CargoController.delete)
 

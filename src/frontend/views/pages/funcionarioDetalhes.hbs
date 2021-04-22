@@ -1,0 +1,35 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  
+  <div id="itens">
+    <label for="nome" style="color: #fff">Nome: </label>
+    <input type="text" id="nomeFuncionarioDetalhes" name="nome" value="{{data.nome}}" required>
+  </div>
+
+  <div id="itens">
+    <label for="desc" style="color: #fff">Sobrenome: </label>
+    <input type="text" id="sobrenomeFuncionarioDetalhes" name="descricao" value="{{data.sobrenome}}"required>
+  </div>
+
+  <div id="itens">
+    <label for="desc" style="color: #fff">Email: </label>
+    <input type="text" id="emailFuncionarioDetalhes" name="descricao" value="{{data.email}}"required>
+  </div>
+
+  <div id="itens">
+    <label for="desc" style="color: #fff">Setor: </label>
+    <input type="text" id="setorFuncionarioDetalhes" name="descricao" value="{{data.setor}}"required>
+  </div>
+
+  <div id="itens">
+    <label for="desc" style="color: #fff">Cargo: </label>
+    <input type="text" id="cargoFuncionarioDetalhes" name="descricao" value="{{data.cargo}}"required>
+  </div>
+
+  <div id="itens">
+    <label for="desc" style="color: #fff">Salário: </label>
+    <input type="text" id="salarioFuncionarioDetalhes" name="descricao" value="{{data.salario}}"required>
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" onclick="updateFuncionario('{{data.id}}')" value="Entrar">Salvar</button>
+    
+</main>

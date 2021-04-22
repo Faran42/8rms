@@ -86,7 +86,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/funcionario/index">
+                <a class="nav-link" href="/funcionario">
                   <span data-feather="file"></span>
                   Funcionarios
                 </a>
@@ -219,6 +219,31 @@
   
   function deleteSetor(id) {
     axios.delete('/setor/' + id).then(
+      function (response) {
+        location.reload()
+        return false;
+      })
+  }
+
+  function updateFuncionario(id) {
+    axios.put('/funcionario/' + id, {
+      nome: document.getElementById("nomeFuncionarioDetalhes").value,
+      sobrenome: document.getElementById("sobrenomeFuncionarioDetalhes").value,
+      email: document.getElementById("emailFuncionarioDetalhes").value,
+      setor: document.getElementById("setorFuncionarioDetalhes").value,
+      cargo: document.getElementById("cargoFuncionarioDetalhes").value,
+      salario: document.getElementById("salarioFuncionarioDetalhes").value,
+      
+    }).then(
+      function (response) {
+        window.location.href = "/funcionario"
+        return false;
+      })   
+          
+  }
+  
+  function deleteFuncionario(id) {
+    axios.delete('/funcionario/' + id).then(
       function (response) {
         location.reload()
         return false;

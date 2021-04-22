@@ -185,13 +185,18 @@
     document.getElementById("navButtons").hidden = true
   }
 
-  function updateCargo(id, nome, descicao) {
-    axios.put('/cargo/' + id).then(
+  function updateCargo(id) {
+    axios.put('/cargo/' + id, {
+      nome: document.getElementById("nomeCargoDetalhes").value,
+      descricao: document.getElementById("descricaoCargoDetalhes").value,
+    }).then(
       function (response) {
-        location.reload()
+        window.location.href = "/cargo"
         return false;
-      })
+      })   
+          
   }
+  //window.location.href = "/cargo"
   function deleteCargo(id) {
     axios.delete('/cargo/' + id).then(
       function (response) {

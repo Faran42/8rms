@@ -55,6 +55,8 @@ export default {
     
     const cargo = await Cargo.findByPk(cargo_id)
 
+    console.log(cargo)
+
     if(!cargo) {
       return res.status(400).json({ error: "Cargo not found"})
     }
@@ -62,6 +64,7 @@ export default {
     return res.render('pages/cargoDetalhes', {
         layout: 'dashboard',
         data: {
+          id: cargo.id,
           nome: cargo.nome,
           descricao: cargo.descricao
         },
@@ -89,7 +92,7 @@ export default {
 
     cargo.save();
 
-    return res.redirect('/cargo')
+    return res.status(200).send();
   },
 
   async delete(req, res) {

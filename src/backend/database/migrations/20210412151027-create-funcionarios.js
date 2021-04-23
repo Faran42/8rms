@@ -30,10 +30,6 @@ module.exports = {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      setor: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
       cargo: {
         type: DataTypes.STRING,
         allowNull: true,

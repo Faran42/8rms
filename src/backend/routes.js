@@ -57,13 +57,8 @@ routes.get('/tdt', (req, res) => {
 
 //rotas de funcionarios
 
-routes.get('/cadastrar/funcionario', (req, res) => {
-  res.render('pages/funcionario', {
-    title: 'Cadastrar Funcionário',
-    layout: 'dashboard'
-  })
-})
 
+routes.get('/cadastrar/funcionario', FuncionarioController.cadastroFuncionario)
 routes.get('/funcionario', FuncionarioController.index)
 routes.get('/funcionario/:funcionario_id', FuncionarioController.funcionarioDetalhes)
 routes.post('/funcionario', FuncionarioController.store)
@@ -72,14 +67,10 @@ routes.delete('/funcionario/:funcionario_id', FuncionarioController.delete)
 
 //rotas de cargos
 
-routes.get('/cadastrar/cargo', (req, res) => {
-  res.render('pages/cargo', {
-    layout: 'dashboard',
-    title: 'Cadastrar Cargo'
-  })
-})
+routes.get('/cadastrar/cargo', CargoController.cadastrarCargo)
 
 routes.get('/cargo', CargoController.index)
+
 routes.get('/cargo/:cargo_id', CargoController.cargoDetalhes)
 routes.post('/cargo', CargoController.store)
 routes.put('/cargo/:cargo_id', CargoController.update)
@@ -99,6 +90,7 @@ routes.post('/setor', SetorController.store)
 routes.get('/setor/:setor_id', SetorController.setorDetalhes)
 routes.put('/setor/:setor_id', SetorController.update)
 routes.delete('/setor/:setor_id', SetorController.delete)
+
 
 //=====================================================================
 

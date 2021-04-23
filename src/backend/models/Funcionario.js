@@ -7,7 +7,7 @@ class Funcionario extends Model {
       sobrenome: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
-      setor: DataTypes.STRING,
+      cpf: DataTypes.NUMBER,
       cargo: DataTypes.STRING,
       administrador: DataTypes.BOOLEAN,
       salario: DataTypes.NUMBER,
@@ -16,9 +16,9 @@ class Funcionario extends Model {
     })
   }
 
-  // static associate(models){
-  //   this.hasMany(models.Address, { foreignKey: 'user_id', as: 'addresses' })
-  // }
+  static associate(models){
+    this.belongsToMany(models.Cargo, { foreignKey: 'funcionarios_id', through: 'funcionario_cargo', as: 'cargos' })
+  }
 }
 
 export default Funcionario;

@@ -17,6 +17,9 @@ Funcionario.init(connection);
 FolhaMensal.init(connection);
 Setor.init(connection);
 
+Funcionario.associate(connection.models);
+Cargo.associate(connection.models);
+Setor.associate(connection.models);
 
 User.init(connection);
 Address.init(connection);

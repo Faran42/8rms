@@ -10,13 +10,13 @@ export default {
       include: {
         association: 'techs',
         attributes: ['name'],
-        through: {
-          attributes: []
-        }
+        // through: {
+        //   attributes: []
+        // }
       }
     })
 
-    return res.json(user.techs)
+    return res.json(user)
   },
 
   async store(req, res) {

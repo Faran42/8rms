@@ -1,6 +1,14 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
   
   <form class="form-cargo" method="POST" action="/cargo">
+    <label for="name">Vincular ao setor: </label>
+      <select id="setor_cargo_select" name="setor_id"required>
+        {{#each setores}}
+
+        <option name="setor_id_option_setor_cargo" value="{{this.id}}">{{this.nome}}</option>
+        {{/each}}
+      </select>
+
     <div id="itens">
       <label for="nome" style="color: #fff">Nome do cargo: </label>
       <input type="text" id="name" name="nome" required>

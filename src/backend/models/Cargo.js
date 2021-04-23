@@ -10,9 +10,10 @@ class Cargo extends Model {
     })
   }
 
-  // static associate(models){
-  //   this.hasMany(models.Address, { foreignKey: 'user_id', as: 'addresses' })
-  // }
+  static associate(models){
+    this.belongsTo(models.Setor, { foreignKey: 'setor_id', as: 'setor' })
+    // this.belongsToMany(models.Funcionario, { foreignKey: 'cargo_id', through: 'funcionario_cargo', as: 'funcionarios' })
+  }
 }
 
 export default Cargo;

@@ -4,26 +4,25 @@ const { DataTypes } = require("sequelize");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('cargos', { 
+    await queryInterface.createTable('funcionario_cargo', { 
       id:{
         type: DataTypes.UUIDV4,
         primaryKey: true,
         allowNull: false,
       },
-      setor_id: {
+      funcionario_id: {
         type: DataTypes.UUIDV4,
         allowNull: false,
-        references: { model: 'setores', key: 'id' },
+        references: { model: 'funcionarios', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-      },
-      nome:{
-        type: DataTypes.STRING,
+      },      
+      cargo_id: {
+        type: DataTypes.UUIDV4,
         allowNull: false,
-      },
-      descricao:{
-        type: DataTypes.STRING,
-        allowNull: false,
+        references: { model: 'cargos', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       created_at: {
         type: DataTypes.DATE,
@@ -37,6 +36,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('cargos')
+    await queryInterface.dropTable('funcionario_cargo')
   }
 };

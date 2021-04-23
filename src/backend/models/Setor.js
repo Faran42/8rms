@@ -11,9 +11,9 @@ class Setor extends Model {
     })
   }
 
-  // static associate(models){
-  //   this.hasMany(models.Address, { foreignKey: 'user_id', as: 'addresses' })
-  // }
+  static associate(models){
+    this.hasMany(models.Cargo, { foreignKey: 'setor_id', as: 'cargos' })
+  }
 }
 
 export default Setor;

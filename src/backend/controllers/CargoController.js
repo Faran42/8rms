@@ -1,30 +1,32 @@
 import Cargo from '../models/Cargo';
+import Setor from '../models/Setor';
 
 import { v4 as uuidV4 } from 'uuid'
 
 export default {
   async index(req, res) {
 
-    const cargos = await Cargo.findAll()
+    const cargos = await Cargo.findAll({include: 'setor', raw: false})
+
+    console.log(cargos)
 
     if (!cargos) {
-      return res.json({ message: "Nenhum cargo cadastrado"})
+      return res.json({ message: "Nenhum cargo cadastrado" })
     }
 
     const cargosSimplificados = cargos.map(array => {
       const novoArray = {
         id: array.id,
         nome: array.nome,
-        descricao: array.descricao
-      }
+        descricao: array.descricao,
+        setor: array.setor.nome,      
+     }
 
       return novoArray
     })
 
     console.log(cargosSimplificados)
-
-    //  return res.json(cargosSimplificados)
-
+    // return res.json(cargos)
     return res.render('pages/cargoIndex', {
       layout: 'dashboard',
       data: cargosSimplificados,
@@ -32,19 +34,31 @@ export default {
     })
   },
 
-  async store(req, res){
-    console.log(req.body)
-    const { nome, descricao } = req.body;
+  async cadastrarCargo(req, res) {
+    const setores = await Setor.findAll({ raw: true })
+    console.log(setores)
+    return res.render('pages/cargo', {
+      layout: 'dashboard',
+      setores: await Setor.findAll({ raw: true }),
+      title: 'Cadastrar Cargo'
+    })
 
-    const cargoJaExiste = await Cargo.findOne({ where: { nome }}) 
+  },
+
+  async store(req, res) {
+    const { setor_id, nome, descricao } = req.body;
+
+    console.log(setor_id, nome, descricao)
+
+    const cargoJaExiste = await Cargo.findOne({ where: { nome } })
 
     if (cargoJaExiste) {
-      return res.json({ message: "Cargo já cadastrado"})
+      return res.json({ message: "Cargo já cadastrado" })
     }
 
     const id = uuidV4()
 
-    const cargo = await Cargo.create({id, nome, descricao});
+    const cargo = await Cargo.create({ id, nome, descricao, setor_id });
     console.log(cargo)
 
     return res.redirect('/cargo')
@@ -52,23 +66,23 @@ export default {
 
   async cargoDetalhes(req, res) {
     const { cargo_id } = req.params;
-    
+
     const cargo = await Cargo.findByPk(cargo_id)
 
     console.log(cargo)
 
-    if(!cargo) {
-      return res.status(400).json({ error: "Cargo not found"})
+    if (!cargo) {
+      return res.status(400).json({ error: "Cargo not found" })
     }
 
     return res.render('pages/cargoDetalhes', {
-        layout: 'dashboard',
-        data: {
-          id: cargo.id,
-          nome: cargo.nome,
-          descricao: cargo.descricao
-        },
-        title: "Editar Cargo"
+      layout: 'dashboard',
+      data: {
+        id: cargo.id,
+        nome: cargo.nome,
+        descricao: cargo.descricao
+      },
+      title: "Editar Cargo"
     })
   },
 
@@ -78,15 +92,15 @@ export default {
 
     const cargo = await Cargo.findByPk(cargo_id)
 
-    if(!cargo) {
-      return res.status(400).json({ error: "Cargo not found"})
+    if (!cargo) {
+      return res.status(400).json({ error: "Cargo not found" })
     }
 
-    if(nome){
+    if (nome) {
       cargo.nome = nome;
     }
 
-    if(descricao) {
+    if (descricao) {
       cargo.descricao = descricao;
     }
 
@@ -97,11 +111,11 @@ export default {
 
   async delete(req, res) {
     const { cargo_id } = req.params;
-    
+
     const cargo = await Cargo.findByPk(cargo_id);
 
-    if(!cargo) {
-      return res.status(400).json({ error: "Cargo not found!"});
+    if (!cargo) {
+      return res.status(400).json({ error: "Cargo not found!" });
     }
 
     await cargo.destroy()

@@ -10,6 +10,7 @@ import UserController from './controllers/UserController'
 import AddressController from './controllers/AddressController'
 import TechController from './controllers/TechController'
 import ReportController from './controllers/ReportController'
+import DashboardController from './controllers/DashboardController'
 
 const routes = Router();
 
@@ -35,17 +36,11 @@ routes.get('/contato', (req, res) => {
   res.render('pages/contato')
 });
 
-routes.get('/dashboard', (req, res) => {
-  res.render('pages/dashboard', {
-    layout: 'dashboard',
-    title: 'Dashboard'
-  })
-});
 
 routes.get('/cadastro', (req, res) => {
   res.render('pages/cadastro')
 });
-  
+
 routes.post('/sessions', sessionsController.create)
 
 routes.get('/tdt', (req, res) => {
@@ -54,6 +49,8 @@ routes.get('/tdt', (req, res) => {
     title: 'Teste da data table'
   })
 })
+
+routes.get('/dashboard', DashboardController.index)
 
 //rotas de funcionarios
 
